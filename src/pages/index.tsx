@@ -75,7 +75,7 @@ export default function Index({ posts }: { posts: Post[] }) {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Narkin&apos;s Builders - Home Page</title>
+        <title>Narkin&apos;s Builders - SEO Learning Version</title>
       </Head>
       <Navigation fixed={true} />
       <div>
