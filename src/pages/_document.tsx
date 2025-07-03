@@ -5,10 +5,20 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <meta data-rh="true" name="theme-color" content="#FFFFFF" />
-      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16584105712"></script>
-      <script> 
-        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());  gtag('config', 'AW-16584105712');`}
-      </script> */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCNM7FL8F0"></script>
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZCNM7FL8F0', {
+        page_path: window.location.pathname
+      });
+      console.log('🟢 Google Analytics initialized:', 'G-ZCNM7FL8F0');
+    `,
+  }}
+/>
 
       {/* <script
         crossOrigin="anonymous"
