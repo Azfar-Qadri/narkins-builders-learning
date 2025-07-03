@@ -3,10 +3,10 @@ import { Html, Head, Main, NextScript } from 'next/document'
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+      `<Head />
       <meta data-rh="true" name="theme-color" content="#FFFFFF" />
-      <meta name="google-site-verification" content="7b2EE30qUvzkuPsb2Ee-Q-0rv5LljYAB4_CWRgLtfu4" />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCNM7FL8F0"></script>
+      <meta name="google-site-verification" content="SY2-UJ6CktAAJnM7sSiieGZEPCNyXtW2nLwoEVGIBHw" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCNM7FL8F0"></script>`
 <script
   dangerouslySetInnerHTML={{
     __html: `
