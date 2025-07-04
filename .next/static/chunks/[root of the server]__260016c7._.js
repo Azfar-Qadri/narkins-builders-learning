@@ -1465,7 +1465,20 @@ const Navigation = ({ transparent, fixed })=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "ml-4 flow-root lg:ml-6",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setLeadForm(true),
+                                                onClick: ()=>{
+                                                    // Track the Get Quote click
+                                                    console.log('🔵 Get Quote button clicked!');
+                                                    if ("object" !== 'undefined' && window.gtag) {
+                                                        window.gtag('event', 'get_quote_click', {
+                                                            event_category: 'Lead Generation',
+                                                            event_label: 'navigation_button',
+                                                            event_source: 'main_navigation'
+                                                        });
+                                                        console.log('✅ Get Quote event sent to Google Analytics');
+                                                    }
+                                                    // Open the lead form
+                                                    setLeadForm(true);
+                                                },
                                                 className: "py-2 px-4 no-underline rounded-full bg-black text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2",
                                                 children: "Get Quote"
                                             }, void 0, false, {

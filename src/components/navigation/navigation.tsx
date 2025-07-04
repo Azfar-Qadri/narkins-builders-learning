@@ -371,10 +371,25 @@ const Navigation: FC<NavigationProps> = ({ transparent, fixed }) => {
                   </a>
                 </div>
 
-                {/* Cart */}
+                {/* Get Quote Button with Enhanced Tracking */}
                 <div className="ml-4 flow-root lg:ml-6">
                   <button
-                    onClick={() => setLeadForm(true)}
+                    onClick={() => {
+                      // Track the Get Quote click
+                      console.log('🔵 Get Quote button clicked!');
+                      
+                      if (typeof window !== 'undefined' && window.gtag) {
+                        window.gtag('event', 'get_quote_click', {
+                          event_category: 'Lead Generation',
+                          event_label: 'navigation_button',
+                          event_source: 'main_navigation'
+                        });
+                        console.log('✅ Get Quote event sent to Google Analytics');
+                      }
+                      
+                      // Open the lead form
+                      setLeadForm(true);
+                    }}
                     className="py-2 px-4 no-underline rounded-full bg-black text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2"
                   >
                     Get Quote
