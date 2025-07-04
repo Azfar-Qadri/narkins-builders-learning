@@ -1,11 +1,34 @@
 import Link from "next/link";
 
 export default function WAButton() {
+    const handleWhatsAppClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // Prevent default navigation temporarily
+        e.preventDefault();
+        
+        console.log('🔵 WhatsApp button clicked!');
+        
+        // Track the event with gtag
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'whatsapp_click', {
+                event_category: 'Contact',
+                event_label: 'sticky_button',
+                event_source: 'bottom_right_button'
+            });
+            console.log('✅ WhatsApp event sent to Google Analytics');
+        }
+        
+        // Navigate to WhatsApp after tracking
+        setTimeout(() => {
+            window.open('https://api.whatsapp.com/send?phone=923203243970', '_blank');
+        }, 100);
+    };
+
     return (
         <Link 
-            href="https://api.whatsapp.com/send?phone=923203243970" 
+            href="#"
             style={{ bottom: '1rem', right: '1rem' }} 
-            className="z-[998] border justify-space-between items-center w-[10rem] fixed py-2 gap-x-2 flex px-2 shadow bor-der no-underline rounded-full bg-black text-white font-sans font-semibold text-sm -mr-2"
+            className="z-[998] border justify-space-between items-center w-[10rem] fixed py-2 gap-x-2 flex px-2 shadow border no-underline rounded-full bg-black text-white font-sans font-semibold text-sm -mr-2"
+            onClick={handleWhatsAppClick}
         >
             <svg viewBox="0 0 32 32" className="w-[2rem] h-[2rem] whatsapp-ico text-white">
                 <path 
