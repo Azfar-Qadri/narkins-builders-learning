@@ -1,18 +1,12 @@
 import { GetServerSideProps } from "next";
 import { useState } from "react";
-
+import Head from "next/head";
 import Image from "next/image";
 import BlogsSection from "@/components/blogs-section/blogs-section";
-
 import Navigation from "@/components/navigation/navigation";
-import VideoPlayer from "@/components/video-player/video-player";
 import Footer from "@/components/footer/footer";
-import { Lightbox } from "@/components/lightbox/lightbox";
 import Link from "next/link";
-import Map from "@/components/map/map";
-import Head from "next/head";
-import Carousel from "@/components/carousel-op/carousel-op";
-import { Card, CardHeader, CardContent } from "@/components/ui/card"; // shadcn/ui Card
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { Post } from "../blog/[...blog]";
@@ -20,15 +14,14 @@ import { useLightboxStore } from "@/zustand";
 import { PlayIcon, MagnifyingGlassCircleIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 import Testimonials from "@/components/testimonials/testimonials";
 
-const categories = ["2 Bed", "3 Bed", "4 Bed", "Sky Villa Duplex"];
+const categories = ["2 Bed", "3 Bed", "4 Bed"];
 const cards = [
   [
     {
       title: "2 Bed Gold",
       size: "1547 Square Feet",
       location: "Heritage Club & Danzoo Safari View",
-      image:
-        "/images/nbr_3d/gold_heritage _club_and_danzoo_safari_ view.webp",
+      image: "/images/nbr_3d/gold_heritage _club_and_danzoo_safari_ view.webp",
     },
   ],
   [
@@ -36,15 +29,13 @@ const cards = [
       title: "3 Bed Diamond Corner",
       size: "2184 Square Feet",
       location: "Heritage Club & Theme Park View",
-      image:
-        "/images/nbr_3d/6.diamond_corner_heritage_club_and_danzoo_safari view.webp",
+      image: "/images/nbr_3d/6.diamond_corner_heritage_club_and_danzoo_safari view.webp",
     },
     {
       title: "3 Bed Diamond-A",
       size: "2121 Square Feet",
       location: "Jinnah & Theme Park View",
-      image:
-        "/images/nbr_3d/Diamond-A-blue.webp",
+      image: "/images/nbr_3d/Diamond-A-blue.webp",
     },
   ],
   [
@@ -60,276 +51,173 @@ const cards = [
       location: "Jinnah & Boulevard View",
       image: "/images/nbr_3d/platinum_a-1_jinnah_and_danzoo_safari_view.webp",
     },
-    {
-      title: "4 Bed Platinum-A",
-      size: "2597 Feet",
-      location: "Jinnah & Theme Park View",
-      image: "/images/nbr_3d/4_platinum_a_jinnah_and_theme_park_view.webp",
-    },    
-    // {
-//   title: "4 Bed Platinum A-1",
-//   size: "2486 Square Feet",
-//   location: "Jinnah & Theme Park View",
-//   image: "/images/nbr_3d/4_platinum_a_jinnah_and_theme_park_view.webp",
-// },
- 
-  ],
-  [
-    {
-      title: "Platinium A-1 Corner 6 Bed",
-      size: "5340 Square Feet",
-      location: "Jinnah & Danzoo Safari View",
-      image: "/images/nbr_3d/platinum-A1-Corner-new(sky).webp",
-    },
-    {
-      title: "Platinum A-1 Boulevard 6 Bed",
-      size: "4972 Square Feet",
-      location: "Jinnah & Boulevard View",
-      image: "/images/nbr_3d/platinum-A1-boulevard-new(sky).webp",
-    },
-    {
-      title: "Platinium A 6 Bed",
-      size: "5194 Square Feet",
-      location: "Jinnah & Theme Park View",
-      image: "/images/nbr_3d/platinum-a-new(sky).webp",
-    },
-    {
-      title: "Diamond A 5 Bed",
-      size: "4242 Square Feet",
-      location: "Jinnah & Theme Park View",
-      image: "/images/nbr_3d/Diamond-A-new(sky).webp",
-    },
-    {
-      title: "Diamond Corner 6 bed",
-      size: "4368 Square Feet",
-      location: "Heritage Club & Theme Park View",
-      image: "/images/nbr_3d/diamond-corner-new(sky).webp",
-    },
-    {
-      title: "Gold 4 Bed",
-      size: "3094 Square Feet",
-      location: "Heritage Club & Danzoo Safari View",
-      image: "/images/nbr_3d/gold-new(sky).webp",
-    },    
   ],
 ];
+
 const amenities = [
   { image: "/nbr-scaled/gym.webp", name: "Gym" },
   { image: "/nbr-scaled/play-area.webp", name: "Kids Area" },
   { image: "/nbr-scaled/steam-bath.webp", name: "Steam Bath" },
   { image: "/nbr-scaled/reception.webp", name: "Grand Reception" },
-  { image: "/nbr-scaled/snooker.webp", name: "Snooker" },
-  { image: "/nbr-scaled/Lift-Shot.webp", name: "Elevators" },
-  { image: "/nbr-scaled/Pool.webp", name: "Pool" },
-  { image: "/nbr-scaled/Seating.webp", name: "Community Hall" },
-  { image: "/nbr-scaled/underground-car-parking.webp", name: "5 Floors Parking" },
 ];
+
 const galleryImages = [
   "/images/narkins_appartment_renamed_files/narkins_appartment_slide_1.webp",
   "/images/narkins_appartment_renamed_files/narkins_appartment_slide_2.webp",
   "/images/narkins_appartment_renamed_files/narkins_appartment_slide_3.webp",
   "/images/narkins_appartment_renamed_files/narkins_appartment_slide_4.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_5.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_6.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_7.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_8.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_9.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_10.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_11.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_12.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_14.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_15.webp",
-  "/images/narkins_appartment_renamed_files/narkins_appartment_slide_16.webp",
 ];
+
 const youtubeVideos = [
-  { id: "FmEHTzdjXEc", title: "Luxury Living at Hill Crest Residency | A Guided Tour", type: "youtube" },
-  { id: "uzYVdqFHovs", title: "Hill Crest Residency: Modern Amenities and Stunning Views", type: "youtube" },
-  { id: "n8PT4z9MdRA", title: "Why Choose Hill Crest Residency? | Customer Testimonials", type: "youtube" },
-  { id: "DClpf8-xaS8", title: "Hill Crest Residency: Your Dream Home in Bahria Town Karachi", type: "youtube" },
-  { id: "5uMTiRmZXBw", title: "Hill Crest Residency: A Closer Look at Our 2, 3 & 4 Bedroom Apartments", type: "youtube" },
+  { id: "FmEHTzdjXEc", title: "Luxury Living at Narkin's Boutique Residency", type: "youtube" },
+  { id: "uzYVdqFHovs", title: "Modern Amenities and Stunning Views", type: "youtube" },
 ];
+
 const testimonials = [
   {
     name: "Saad Arshad",
     stars: [true, true, true, true, "half"],
-    testimonial:
-      "Highly committed to delivering in timelines, I wholeheartedly recommend considering investment in projects by Narkin’s Builders.",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg", // Placeholder avatar
+    testimonial: "Highly committed to delivering in timelines, I wholeheartedly recommend considering investment in projects by Narkin's Builders.",
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     name: "Arsalan",
     stars: [true, true, true, true, true],
-    testimonial:
-      "Smooth booking experience, very transparent throughout the process.",
-    avatar: "https://randomuser.me/api/portraits/men/2.jpg", // Placeholder avatar
-  },
-  {
-    name: "Umair Iqrar",
-    stars: [true, true, true, true, false],
-    testimonial:
-      "I decided to invest during the initial launch phase, and after just two years, I’ve seen substantial returns. It’s been a fantastic investment opportunity!",
-    avatar: "/images/sarim-nara.png", // Placeholder avatar
+    testimonial: "Smooth booking experience, very transparent throughout the process.",
+    avatar: "https://randomuser.me/api/portraits/men/2.jpg",
   },
 ];
 
-const Amenities = () => {
-  const [amenityIndex, setAmenityIndex] = useState(0);
-  return (
-    <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      {/* Heading and Subheading */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
-          Amenities in {`Narkin's `} Boutique Residency
-        </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Explore the top-notch amenities designed to enhance your living experience.
-        </p>
-      </div>
-
-      {/* Amenities Grid */}
-      <div className="max-w-7xl w-full mx-auto">
-        <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
-          {amenities.map((amenity, index) => (
-            <motion.li
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="group">
-              <div className="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
-                <Image
-                  src={amenity.image}
-                  alt={amenity.name}
-                  width={500}
-                  height={300}
-                  className="absolute inset-0 h-full w-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover: bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold opacity-0 group-hover: opacity-100 transition-all duration-300">
-                    {amenity.name}
-                  </span>
-                </div>
-              </div>
-            </motion.li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Carousel Section */}
-      <div className="mt-16 relative h-[30rem] w-full rounded-xl overflow-hidden">
-        <Carousel
-          id="carousel"
-          swipe
-          autoPlay={false}
-          slideShow={false}
-          loop
-          rightToLeft
-          hideIndicators={true}
-          onChange={setAmenityIndex}
-          className="w-full h-full"
-          displayMode="default"
-          dataSource={amenities}
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient from-transparent to-black bg-opacity-40 p-4 backdrop-blur-md">
-          <h2 className="text-white text-lg font-bold">
-            {amenities.map(({ name }) => name)[amenityIndex]}
-          </h2>
-        </div>
-      </div>
-    </div>
-  )
-};
-export default function HillCrestResidency({ posts }: { posts: Post[] }) {
+export default function NarkinsBoutiqueResidency({ posts }: { posts: Post[] }) {
   const openLightbox = useLightboxStore(state => state.openLightbox);
 
   return (
     <main>
       <Head>
-        {/* Primary Meta Tags */}
-        <title>{`Narkin's `} Boutique Residency | Luxury Apartments in Bahria Town Karachi</title>
+       
+       {/* Mobile Optimization */}
+<meta name="format-detection" content="telephone=yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="theme-color" content="#000000" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="canonical" href="https://narkinsbuilders.com/narkins-boutique-residency" />
+        
+        <title>Narkin's Boutique Residency - Premium 2, 3 & 4 Bedroom Luxury Apartments in Bahria Town Karachi</title>
         <meta
           name="description"
-          content="Discover Narkin's Boutique Residency, offering luxurious 2, 3, and 4-bedroom apartments in Bahria Town Karachi. Experience modern living with premium amenities and panoramic views."
+          content="Discover Narkin's Boutique Residency in Heritage Commercial, Bahria Town Karachi. 20-floor luxury apartments with 2, 3 & 4 bedrooms, indoor swimming pools, fitness facilities, and panoramic views."
         />
         <meta
           name="keywords"
-          content="Narkin's Boutique Residency, Bahria Town Karachi, luxury apartments, modern living, 2-bedroom apartments, 3-bedroom apartments, 4-bedroom apartments, premium amenities"
+          content="Narkin's Boutique Residency, luxury apartments bahria town, 2 bedroom apartments bahria town, 3 bedroom apartments bahria town, 4 bedroom apartments bahria town, Heritage Commercial Karachi"
         />
-        <meta name="author" content="Narkin's Builders" />
+        <meta name="author" content="Narkin's Builders & Developers" />
 
-        {/* Open Graph / Facebook Meta Tags */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Narkin's Boutiqe Residency | Luxury Apartments in Bahria Town Karachi" />
-        <meta
-          property="og:description"
-          content="Discover Narkin's Boutiqe Residency, offering luxurious 2, 3, and 4-bedroom apartments in Bahria Town Karachi. Experience modern living with premium amenities and panoramic views."
-        />
-        <meta property="og:url" content="https://narkinsbuilders.com/hill-crest-residency" />
-        <meta
-          property="og:image"
-          content="https://narkinsbuilders.com/images/hcr_appartment/hcr_apartment_slide_1.png"
-        />
-        <meta property="og:site_name" content="Hill Crest Residency" />
+        <meta property="og:title" content="Narkin's Boutique Residency - Premium Luxury Apartments in Bahria Town Karachi" />
+        <meta property="og:description" content="Discover Narkin's Boutique Residency in Heritage Commercial, Bahria Town Karachi. 20-floor luxury apartments with premium amenities and panoramic views." />
+        <meta property="og:url" content="https://narkinsbuilders.com/narkins-boutique-residency" />
+        <meta property="og:image" content="https://narkinsbuilders.com/images/NBR_SLIDE_1.webp" />
+        <meta property="og:site_name" content="Narkin's Builders" />
 
-        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Narkin's Boutiqe Residency | Luxury Apartments in Bahria Town Karachi" />
-        <meta
-          name="twitter:description"
-          content="Discover Narkin's Boutiqe Residency, offering luxurious 2, 3, and 4-bedroom apartments in Bahria Town Karachi. Experience modern living with premium amenities and panoramic views."
+        <meta name="twitter:title" content="Narkin's Boutique Residency - Premium Luxury Apartments in Bahria Town Karachi" />
+        <meta name="twitter:description" content="Discover Narkin's Boutique Residency in Heritage Commercial, Bahria Town Karachi. 20-floor luxury apartments with premium amenities and panoramic views." />
+        <meta name="twitter:image" content="https://narkinsbuilders.com/images/NBR_SLIDE_1.webp" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": "Narkin's Boutique Residency Apartments",
+              "description": "Luxury 2, 3 & 4 bedroom apartments in Heritage Commercial area, Bahria Town Karachi. 20-floor tower with 10+ premium amenities, indoor swimming pools, and panoramic views.",
+              "brand": {
+                "@type": "Brand",
+                "name": "Narkin's Builders"
+              },
+              "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "price": "Contact for pricing",
+                "priceCurrency": "PKR",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "Narkin's Builders & Developers"
+                }
+              },
+              "category": "Real Estate",
+              "image": "https://narkinsbuilders.com/images/NBR_SLIDE_1.webp",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Heritage Commercial, Bahria Town",
+                "addressLocality": "Karachi",
+                "addressRegion": "Sindh",
+                "addressCountry": "PK"
+              }
+            })
+          }}
         />
       </Head>
+      
       <Navigation />
-      <Lightbox />
+      
       <div className="bg-white pt-[6rem]">
-        <div className="px-4 bg-neutral-50 relative md:xl:px-0 w-full h-auto max-w-7xl z-index-0 bg-transparent mx-auto my-8 rounded-xl overflow-hidden -md:lg:rounded-none">
-          <VideoPlayer src="/nbr.mp4" poster={'/nbr_video_poster.webp'} />
+        {/* Video Section */}
+        <div className="px-4 bg-neutral-50 relative md:xl:px-0 w-full h-auto max-w-7xl mx-auto my-8 rounded-xl overflow-hidden">
+          <video
+            preload="yes"
+            poster="/nbr_video_poster.webp"
+            className="w-full h-auto rounded-xl"
+            loop
+            autoPlay
+            playsInline
+            muted
+            controls
+          >
+            <source src="/nbr.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
+        
+        {/* Content Section */}
         <div className="relative isolate overflow-hidden py-20 pt-5 sm:py-[28px]">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-4xl font-bold tracking-tight text-black sm:text-7xl">{'Narkin\'s '} Boutique Residency</h2>
+              <h2 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">Narkin&apos;s Boutique Residency</h2>
               <p className="mt-6 text-lg leading-8 text-gray-800">
-                Welcome to {`Narkin's `}Boutique Residency, where luxury meets
-                bespoke design in the heart of Bahria Town Karachi's Heritage
-                Commercial area. Crafted by "Talent & Taste," our premium
+                Welcome to Narkin&apos;s Boutique Residency, where luxury meets
+                bespoke design in the heart of Bahria Town Karachi&apos;s Heritage
+                Commercial area. With ground + 20 floors, our premium
                 high-rise apartments redefine upscale living with their
                 exquisite attention to detail.
-
-                Nestled in the esteemed Heritage Commercial area, {`Narkin's`}{" "}
-                Boutique Residency offers residents unparalleled access to a
-                wealth of amenities and attractions. From exclusive luxury
-                farmhouses and the prestigious Heritage Club to the convenience
-                of Imtiaz Mega, shopping malls, and a bustling food street,
-                everything you desire is just a walk away. Additionally, the
-                24/7 Shop Stop & PSO ensures your daily needs are effortlessly
-                met.
-                <br />
-                <br />
-                With ground + 20 floors, {`Narkin's`} Boutique Residency
-                presents a selection of 2, 3, and 4-bedroom luxury apartments,
+                <br /><br />
+                We present a selection of 2, 3, and 4-bedroom luxury apartments,
                 each boasting panoramic views of Bahria Town Karachi. Experience
                 the epitome of sophistication as you unwind in your designer
-                Apartment.Adding to its uniqueness, {`Narkin's`} introduces Sky Villa Duplex penthouses—double-story luxury residences with private terraces, expansive layouts, and unmatched privacy, perfect for those seeking a villa experience in the sky.
-                <br />
-                <br />
+                apartment.
               </p>
             </div>
           </div>
         </div>
+        
+        {/* Apartment Options Section */}
         <section className="bg-black py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            {/* Heading and Subheading */}
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                 Explore Our Offerings
               </h2>
               <p className="mt-4 text-lg text-neutral-300 max-w-2xl mx-auto">
-                Discover a range of luxurious apartments designed to meet your lifestyle needs. Each offering combines elegance, comfort, and modern amenities.
+                Discover a range of luxurious apartments designed to meet your lifestyle needs.
               </p>
             </div>
+            
             <Tabs defaultValue={categories[0]} className="w-full mt-10">
-              {/* Tabs List */}
               <TabsList className="flex space-x-1 gap-2 py-2 mb-5 border-b-neutral-900 rounded-xl bg-neutral-900/20">
                 {categories.map((category) => (
                   <TabsTrigger
@@ -342,7 +230,6 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                 ))}
               </TabsList>
 
-              {/* Tabs Content */}
               {cards.map((items, idx) => (
                 <TabsContent key={idx} value={categories[idx]}>
                   <motion.div
@@ -354,7 +241,6 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                     {items.map((item, index) => (
                       <motion.div
                         key={index}
-                        // whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                         className="group"
                       >
@@ -365,7 +251,7 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                           <CardHeader className="relative">
                             <Image
                               src={item.image}
-                              alt={item.title}
+                              alt={`${item.title} - Narkin's Boutique Residency floor plan`}
                               width={500}
                               height={300}
                               className="w-full h-auto rounded-t-lg"
@@ -376,7 +262,7 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                             </div>
                           </CardHeader>
                           <CardContent className="p-4">
-                            <h1 className="text-xl font-semibold text-white">{item.title}</h1>
+                            <h3 className="text-xl font-semibold text-white">{item.title}</h3>
                             <p className="text-sm mt-2 text-neutral-300">
                               <strong>Size</strong>: {item.size}, <strong>Location</strong>: {item.location}
                             </p>
@@ -390,22 +276,62 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
             </Tabs>
           </div>
         </section>
+        
+        {/* Amenities Section */}
         <section className="bg-white py-20">
-          <Amenities />
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                Amenities in Narkin&apos;s Boutique Residency
+              </h2>
+              <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                Explore the top-notch amenities designed to enhance your living experience.
+              </p>
+            </div>
+
+            <div className="max-w-7xl w-full mx-auto">
+              <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+                {amenities.map((amenity, index) => (
+                  <motion.li
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                    className="group"
+                  >
+                    <div className="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                      <Image
+                        src={amenity.image}
+                        alt={`${amenity.name} - Narkin's Boutique Residency amenity`}
+                        width={500}
+                        height={300}
+                        className="absolute inset-0 h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <span className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300">
+                          {amenity.name}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </section>
+        
+        {/* Gallery Section */}
         <section className="bg-neutral-100 px-5 mx-auto py-20 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            {/* Gallery Heading (Optional) */}
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                 Gallery
               </h2>
               <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                Explore the stunning visuals of Narkins Boutique Residency.
+                Explore the stunning visuals of Narkin&apos;s Boutique Residency.
               </p>
             </div>
 
-            {/* Masonry Grid Gallery */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {galleryImages.map((src, index) => (
                 <motion.div
@@ -417,7 +343,7 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                 >
                   <Image
                     src={src}
-                    alt={`Gallery Image ${index + 1}`}
+                    alt={`Narkin's Boutique Residency Gallery Image ${index + 1}`}
                     width={500}
                     height={300}
                     className="w-full h-auto object-cover rounded-lg"
@@ -431,39 +357,34 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                 </motion.div>
               ))}
             </div>
-
-            {/* Map Section (Unchanged) */}
-            <div className="mt-16">
-              <Map map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.871134778674!2d67.3134228!3d25.0044944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb34b0d0e2f0313%3A0x82f9da3499b223b1!2sHill%20Crest%20Residency!5e0!3m2!1sen!2s!4v1714296481726!5m2!1sen!2s" />
-            </div>
           </div>
         </section>
 
+        {/* Testimonials Section */}
         <section className="bg-neutral-100 border-t px-5 lg:px-8 py-20">
           <Testimonials testimonials={testimonials} />
         </section>
+        
+        {/* YouTube Videos Section */}
         <section className="bg-white py-20 border-b border">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            {/* Heading */}
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                 What Social Media is Saying
               </h2>
               <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                See what people are saying about Hill Crest Residency on YouTube and Facebook.
+                See what people are saying about Narkin&apos;s Boutique Residency on YouTube.
               </p>
             </div>
 
-            {/* Masonry Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 auto-rows-[minmax(200px, auto)]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               {youtubeVideos.map((video, index) => (
                 <motion.div
                   key={video.id}
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.3 }}
-                  className="group relative overflow-hidden min-h-[300px] shadow-lg hover:shadow-xl"
+                  className="group relative overflow-hidden min-h-[300px] shadow-lg hover:shadow-xl rounded-lg"
                 >
-                  {/* YouTube Thumbnail */}
                   <a
                     href={`https://youtube.com/watch?v=${video.id}`}
                     target="_blank"
@@ -475,16 +396,15 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                       alt={video.title}
                       width={500}
                       height={300}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover rounded-lg"
                       loading="lazy"
                     />
                     <div className="absolute bottom-[4rem] left-4 flex items-center justify-center">
-                      <Image alt={'youtube-logo'} src="/youtube.svg" width={50} height={150 / 2} style={{ height: 'auto' }} />
+                      <Image alt="youtube-logo" src="/youtube.svg" width={50} height={25} style={{ height: 'auto' }} />
                     </div>
                   </a>
 
-                  {/* Overlay with Title and Watch Now Button */}
-                  <div className="absolute inset-0 bg-black bg-opacity-0 bg-linear-to-b from-transparent to-black group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center rounded-lg">
                     <a
                       href={`https://youtube.com/watch?v=${video.id}`}
                       target="_blank"
@@ -495,21 +415,25 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                     </a>
                   </div>
 
-                  {/* Video Title */}
-                  <div className="absolute flex items-middle bottom-0 left-0 right-0 p-4 bg-black/50 backdrop-blur-sm">
+                  <div className="absolute flex items-center bottom-0 left-0 right-0 p-4 bg-black/50 backdrop-blur-sm rounded-b-lg">
                     <p className="text-white text-lg font-semibold">{video.title}</p>
-                    <div className="ml-auto mt-1"><ArrowTopRightOnSquareIcon className="h-4 w-4 text-white" /></div>
+                    <div className="ml-auto mt-1">
+                      <ArrowTopRightOnSquareIcon className="h-4 w-4 text-white" />
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
+        
+        {/* Blog Section */}
         <BlogsSection posts={posts} />
       </div>
+      
       <Footer />
-    </main >
-  )
+    </main>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {

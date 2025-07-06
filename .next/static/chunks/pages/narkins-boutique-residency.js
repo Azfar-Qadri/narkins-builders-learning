@@ -1,12 +1,12 @@
 __turbopack_load_page_chunks__("/narkins-boutique-residency", [
-  "static/chunks/[root of the server]__7bb194e6._.js",
-  "static/chunks/node_modules_next_c3fda8c7._.js",
+  "static/chunks/[root of the server]__b1201f3b._.js",
+  "static/chunks/node_modules_next_48c1e15e._.js",
   "static/chunks/node_modules_react_1cad9b0b._.js",
   "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
   "static/chunks/node_modules_react-dom_f14d0471._.js",
   "static/chunks/node_modules_@headlessui_react_dist_34f55537._.js",
   "static/chunks/node_modules_framer-motion_dist_es_3710b6f4._.js",
-  "static/chunks/node_modules_48d54270._.js",
+  "static/chunks/node_modules_bf2800e3._.js",
   "static/chunks/src_pages_narkins-boutique-residency_index_tsx_5771e187._.js",
-  "static/chunks/src_pages_narkins-boutique-residency_index_tsx_274e85f0._.js"
+  "static/chunks/src_pages_narkins-boutique-residency_index_tsx_2bb9a3cd._.js"
 ])

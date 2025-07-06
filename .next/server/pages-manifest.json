@@ -1,6 +1,12 @@
 {
+  "/": "pages/index.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/hill-crest-residency": "pages/hill-crest-residency.js"
+  "/about": "pages/about.js",
+  "/apartments-for-sale-bahria-town-karachi": "pages/apartments-for-sale-bahria-town-karachi.js",
+  "/completed-projects": "pages/completed-projects.js",
+  "/hill-crest-residency": "pages/hill-crest-residency.js",
+  "/luxury-apartments-bahria-town": "pages/luxury-apartments-bahria-town.js",
+  "/narkins-boutique-residency": "pages/narkins-boutique-residency.js"
 }

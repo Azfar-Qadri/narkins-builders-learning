@@ -1809,7 +1809,20 @@ const Navigation = ({ transparent, fixed })=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "ml-4 flow-root lg:ml-6",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setLeadForm(true),
+                                                onClick: ()=>{
+                                                    // Track the Get Quote click
+                                                    console.log('🔵 Get Quote button clicked!');
+                                                    if ("object" !== 'undefined' && window.gtag) {
+                                                        window.gtag('event', 'get_quote_click', {
+                                                            event_category: 'Lead Generation',
+                                                            event_label: 'navigation_button',
+                                                            event_source: 'main_navigation'
+                                                        });
+                                                        console.log('✅ Get Quote event sent to Google Analytics');
+                                                    }
+                                                    // Open the lead form
+                                                    setLeadForm(true);
+                                                },
                                                 className: "py-2 px-4 no-underline rounded-full bg-black text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2",
                                                 children: "Get Quote"
                                             }, void 0, false, {
@@ -1882,8 +1895,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$footer$
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navigation$2f$navigation$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/navigation/navigation.tsx [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/link.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/head.js [client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
+;
 ;
 ;
 ;
@@ -1922,10 +1937,81 @@ function Blogs() {
     }["Blogs.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
+                        children: "Real Estate Blog | Latest Property Insights from Narkin's Builders"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/blogs/index.tsx",
+                        lineNumber: 36,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "description",
+                        content: "Stay updated with the latest real estate trends, property investment tips, and construction insights in Karachi. Expert advice from Narkin's Builders with 30+ years experience."
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/blogs/index.tsx",
+                        lineNumber: 37,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "keywords",
+                        content: "Karachi real estate blog, property investment tips, Bahria Town news, construction insights, luxury apartments blog"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/blogs/index.tsx",
+                        lineNumber: 38,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:title",
+                        content: "Real Estate Blog | Narkin's Builders"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/blogs/index.tsx",
+                        lineNumber: 41,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:description",
+                        content: "Latest real estate insights and property investment tips from Karachi's leading construction company."
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/blogs/index.tsx",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:url",
+                        content: "https://narkinsbuilders.com/blogs"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/blogs/index.tsx",
+                        lineNumber: 43,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:image",
+                        content: "https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/blogs/index.tsx",
+                        lineNumber: 44,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "canonical",
+                        href: "https://narkinsbuilders.com/blogs"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/blogs/index.tsx",
+                        lineNumber: 47,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/pages/blogs/index.tsx",
+                lineNumber: 35,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navigation$2f$navigation$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/blogs/index.tsx",
-                lineNumber: 34,
-                columnNumber: 5
+                lineNumber: 49,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "bg-white min-h-screen py-24 sm:py-32",
@@ -1943,22 +2029,22 @@ function Blogs() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                    lineNumber: 38,
-                                    columnNumber: 11
+                                    lineNumber: 53,
+                                    columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mt-2 text-lg leading-8 text-gray-600",
                                     children: "Checkout what were publishing on our blog"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                    lineNumber: 39,
-                                    columnNumber: 11
+                                    lineNumber: 54,
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/blogs/index.tsx",
-                            lineNumber: 37,
-                            columnNumber: 9
+                            lineNumber: 52,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 -border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3",
@@ -1974,8 +2060,8 @@ function Blogs() {
                                                     children: post.date
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 47,
-                                                    columnNumber: 17
+                                                    lineNumber: 62,
+                                                    columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                                                     href: "#" // Placeholder: replace with actual category link or remove if not applicable
@@ -1984,14 +2070,14 @@ function Blogs() {
                                                     children: `Narkin's`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 51,
-                                                    columnNumber: 17
+                                                    lineNumber: 66,
+                                                    columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                            lineNumber: 46,
-                                            columnNumber: 15
+                                            lineNumber: 61,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "group relative",
@@ -2005,20 +2091,20 @@ function Blogs() {
                                                                 className: "absolute inset-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/blogs/index.tsx",
-                                                                lineNumber: 61,
-                                                                columnNumber: 21
+                                                                lineNumber: 76,
+                                                                columnNumber: 23
                                                             }, this),
                                                             post.title
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/pages/blogs/index.tsx",
-                                                        lineNumber: 60,
-                                                        columnNumber: 19
+                                                        lineNumber: 75,
+                                                        columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 59,
-                                                    columnNumber: 17
+                                                    lineNumber: 74,
+                                                    columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "mt-5 line-clamp-3 text-sm leading-6 text-gray-600",
@@ -2028,14 +2114,14 @@ function Blogs() {
                                                     }
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 65,
-                                                    columnNumber: 17
+                                                    lineNumber: 80,
+                                                    columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                            lineNumber: 58,
-                                            columnNumber: 15
+                                            lineNumber: 73,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "hidden relative mt-8 flex items-center gap-x-4",
@@ -2046,8 +2132,8 @@ function Blogs() {
                                                     className: "h-10 w-10 rounded-full bg-gray-50"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 68,
-                                                    columnNumber: 17
+                                                    lineNumber: 83,
+                                                    columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-sm leading-6",
@@ -2061,67 +2147,67 @@ function Blogs() {
                                                                         className: "absolute inset-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/pages/blogs/index.tsx",
-                                                                        lineNumber: 72,
-                                                                        columnNumber: 23
+                                                                        lineNumber: 87,
+                                                                        columnNumber: 25
                                                                     }, this),
                                                                     post.author.name
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/pages/blogs/index.tsx",
-                                                                lineNumber: 71,
-                                                                columnNumber: 21
+                                                                lineNumber: 86,
+                                                                columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                                            lineNumber: 70,
-                                                            columnNumber: 19
+                                                            lineNumber: 85,
+                                                            columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "text-gray-600",
                                                             children: post.author.role
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                                            lineNumber: 76,
-                                                            columnNumber: 19
+                                                            lineNumber: 91,
+                                                            columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 69,
-                                                    columnNumber: 17
+                                                    lineNumber: 84,
+                                                    columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                            lineNumber: 67,
-                                            columnNumber: 15
+                                            lineNumber: 82,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, post.id, true, {
                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                    lineNumber: 45,
-                                    columnNumber: 13
+                                    lineNumber: 60,
+                                    columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/pages/blogs/index.tsx",
-                            lineNumber: 43,
-                            columnNumber: 9
+                            lineNumber: 58,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/pages/blogs/index.tsx",
-                    lineNumber: 36,
-                    columnNumber: 7
+                    lineNumber: 51,
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/blogs/index.tsx",
-                lineNumber: 35,
-                columnNumber: 5
+                lineNumber: 50,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$footer$2f$footer$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/blogs/index.tsx",
-                lineNumber: 84,
-                columnNumber: 5
+                lineNumber: 99,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true);

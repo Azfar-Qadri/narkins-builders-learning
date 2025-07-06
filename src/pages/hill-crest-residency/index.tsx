@@ -1,18 +1,16 @@
 import { GetServerSideProps } from "next";
 import { useState } from "react";
-
+import Head from "next/head";
 import Image from "next/image";
 import BlogsSection from "@/components/blogs-section/blogs-section";
-
 import Navigation from "@/components/navigation/navigation";
 import VideoPlayer from "@/components/video-player/video-player";
 import Footer from "@/components/footer/footer";
 import { Lightbox } from "@/components/lightbox/lightbox";
 import Link from "next/link";
 import Map from "@/components/map/map";
-import Head from "next/head";
 import Carousel from "@/components/carousel-op/carousel-op";
-import { Card, CardHeader, CardContent } from "@/components/ui/card"; // shadcn/ui Card
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { Post } from "../blog/[...blog]";
@@ -31,12 +29,14 @@ const cards = [[
     { title: '4 Bed Rhodium', size: '1996 Square Feet', location: 'Jinnah View', image: "/images/hcr_appartment/RHODIUM PLAN.webp" },
     { title: '4 Bed Sapphire-A', size: '1388 Square Feet', location: 'Safari View', image: "/images/hcr_appartment/SAPPHIRE A PAGE.webp" },
 ]];
+
 const amenities = [
     { image: "/hcr-scaled/gym.webp", name: "Gym" },
     { image: "/hcr-scaled/mosque.webp", name: "Prayer Area" },
     { image: "/hcr-scaled/steam-bath.webp", name: "Steam Bath" },
     { image: "/hcr-scaled/grand-lobby-for-hcr.webp", name: "Grand Lobby" },
 ];
+
 const galleryImages = [
     "/images/hcr_appartment/hcr_apartment_slide_1.webp",
     "/images/hcr_appartment/hcr_apartment_slide_2.webp",
@@ -52,35 +52,33 @@ const galleryImages = [
     "/images/hcr_appartment/hcr_apartment_slide_12.webp",
     "/images/hcr_appartment/hcr_apartment_slide_13.webp",
 ];
+
 const youtubeVideos = [
     { id: "TSiLOTW2s4g", title: "Tour of Hill Crest Residency", type: "youtube" },
     { id: "5zv639iO31w", title: "Luxury Living at Hill Crest", type: "youtube" },
     { id: "D5YaV4CdaxE", title: "Customer Review", type: "youtube" },
-    // { id: "1P8vDFyHGu", title: "Facebook Post", type: "facebook" }, // Added Facebook post
     { id: "iNbSrOL8HD4", title: "Hill Crest Residency Walkthrough", type: "youtube" },
     { id: "cneUzaJe-Cg", title: "Why Choose Hill Crest?", type: "youtube" },
 ];
+
 const testimonials = [
     {
         name: "Saad Arshad",
         stars: [true, true, true, true, "half"],
-        testimonial:
-            "Highly committed to delivering in timelines, I wholeheartedly recommend considering investment in projects by Narkin’s Builders.",
-        avatar: "https://randomuser.me/api/portraits/men/1.jpg", // Placeholder avatar
+        testimonial: "Highly committed to delivering in timelines, I wholeheartedly recommend considering investment in projects by Narkin's Builders.",
+        avatar: "https://randomuser.me/api/portraits/men/1.jpg",
     },
     {
         name: "Arsalan",
         stars: [true, true, true, true, true],
-        testimonial:
-            "Smooth booking experience, very transparent throughout the process.",
-        avatar: "https://randomuser.me/api/portraits/men/2.jpg", // Placeholder avatar
+        testimonial: "Smooth booking experience, very transparent throughout the process.",
+        avatar: "https://randomuser.me/api/portraits/men/2.jpg",
     },
     {
         name: "Umair Iqrar",
         stars: [true, true, true, true, false],
-        testimonial:
-            "I decided to invest during the initial launch phase, and after just two years, I’ve seen substantial returns. It’s been a fantastic investment opportunity!",
-        avatar: "https://randomuser.me/api/portraits/men/3.jpg", // Placeholder avatar
+        testimonial: "I decided to invest during the initial launch phase, and after just two years, I've seen substantial returns. It's been a fantastic investment opportunity!",
+        avatar: "https://randomuser.me/api/portraits/men/3.jpg",
     },
 ];
 
@@ -88,7 +86,6 @@ const Amenities = () => {
     const [amenityIndex, setAmenityIndex] = useState(0);
     return (
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            {/* Heading and Subheading */}
             <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                     Amenities in Hill Crest Residency
@@ -98,7 +95,6 @@ const Amenities = () => {
                 </p>
             </div>
 
-            {/* Amenities Grid */}
             <div className="max-w-7xl w-full mx-auto">
                 <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
                     {amenities.map((amenity, index) => (
@@ -116,8 +112,8 @@ const Amenities = () => {
                                     className="absolute inset-0 h-full w-full object-cover"
                                     loading="lazy"
                                 />
-                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover: bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                                    <span className="text-white text-lg font-semibold opacity-0 group-hover: opacity-100 transition-all duration-300">
+                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                                    <span className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300">
                                         {amenity.name}
                                     </span>
                                 </div>
@@ -127,7 +123,6 @@ const Amenities = () => {
                 </ul>
             </div>
 
-            {/* Carousel Section */}
             <div className="mt-16 relative h-[30rem] w-full rounded-xl overflow-hidden">
                 <Carousel
                     id="carousel"
@@ -142,36 +137,50 @@ const Amenities = () => {
                     displayMode="default"
                     dataSource={amenities}
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient from-transparent to-black bg-opacity-40 p-4 backdrop-blur-md">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent bg-opacity-40 p-4 backdrop-blur-md">
                     <h2 className="text-white text-lg font-bold">
-                        {amenities.map(({name})=> name)[amenityIndex]}
+                        {amenities.map(({name}) => name)[amenityIndex]}
                     </h2>
                 </div>
             </div>
         </div>
-    )
+    );
 };
+
 export default function HillCrestResidency({ posts }: { posts: Post[] }) {
     const openLightbox = useLightboxStore(state => state.openLightbox);
 
     return (
         <main>
             <Head>
+                {/* Mobile Optimization */}
+<meta name="format-detection" content="telephone=yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="theme-color" content="#000000" />
+
+                {/* Basic Meta Tags */}
+                <meta charSet="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://narkinsbuilders.com/hill-crest-residency" />
+                
                 {/* Primary Meta Tags */}
-                <title>Hill Crest Residency | Luxury Apartments in Bahria Town Karachi</title>
+                <title>Hill Crest Residency - Premium 2, 3 & 4 Bedroom Apartments in Bahria Town Karachi</title>
                 <meta
                     name="description"
-                    content="Discover Hill Crest Residency, offering luxurious 2, 3, and 4-bedroom apartments in Bahria Town Karachi. Experience modern living with premium amenities and panoramic views."
+                    content="Hill Crest Residency offers luxury 2, 3, and 4-bedroom apartments in Bahria Town Karachi. Modern amenities, underground parking, smart home features, and flexible payment plans by Narkin's Builders."
                 />
                 <meta
                     name="keywords"
-                    content="Hill Crest Residency, Bahria Town Karachi, luxury apartments, modern living, 2-bedroom apartments, 3-bedroom apartments, 4-bedroom apartments, premium amenities"
+                    content="Hill Crest Residency, Bahria Town Karachi apartments, luxury apartments, 2 bedroom apartments bahria town, 3 bedroom apartments bahria town, 4 bedroom apartments bahria town, smart apartments Karachi"
                 />
-                <meta name="author" content="Narkin's Builders" />
+                <meta name="author" content="Narkin's Builders & Developers" />
 
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Hill Crest Residency | Luxury Apartments in Bahria Town Karachi" />
+                <meta property="og:title" content="Hill Crest Residency - Premium Apartments in Bahria Town Karachi" />
                 <meta
                     property="og:description"
                     content="Discover Hill Crest Residency, offering luxurious 2, 3, and 4-bedroom apartments in Bahria Town Karachi. Experience modern living with premium amenities and panoramic views."
@@ -179,39 +188,146 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                 <meta property="og:url" content="https://narkinsbuilders.com/hill-crest-residency" />
                 <meta
                     property="og:image"
-                    content="https://narkinsbuilders.com/images/hcr_appartment/hcr_apartment_slide_1.png"
+                    content="https://narkinsbuilders.com/images/hcr_new.webp"
                 />
-                <meta property="og:site_name" content="Hill Crest Residency" />
+                <meta property="og:site_name" content="Narkin's Builders" />
 
                 {/* Twitter Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Hill Crest Residency | Luxury Apartments in Bahria Town Karachi" />
+                <meta name="twitter:title" content="Hill Crest Residency - Premium Apartments in Bahria Town Karachi" />
                 <meta
                     name="twitter:description"
                     content="Discover Hill Crest Residency, offering luxurious 2, 3, and 4-bedroom apartments in Bahria Town Karachi. Experience modern living with premium amenities and panoramic views."
                 />
+                <meta name="twitter:image" content="https://narkinsbuilders.com/images/hcr_new.webp" />
+
+                {/* Property Schema Markup */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Product",
+                      "name": "Hill Crest Residency Apartments",
+                      "description": "Luxury 2, 3 & 4 bedroom apartments in Bahria Town Karachi with modern amenities, underground parking, and smart home features. Located just 1 minute from main entrance.",
+                      "brand": {
+                        "@type": "Brand",
+                        "name": "Narkin's Builders"
+                      },
+                      "offers": {
+                        "@type": "Offer",
+                        "availability": "https://schema.org/InStock",
+                        "price": "Contact for pricing",
+                        "priceCurrency": "PKR",
+                        "seller": {
+                          "@type": "Organization",
+                          "name": "Narkin's Builders & Developers"
+                        }
+                      },
+                      "category": "Real Estate",
+                      "image": "https://narkinsbuilders.com/images/hcr_new.webp",
+                      "amenityFeature": [
+                        {
+                          "@type": "LocationFeatureSpecification",
+                          "name": "Underground Parking",
+                          "value": true
+                        },
+                        {
+                          "@type": "LocationFeatureSpecification", 
+                          "name": "Swimming Pool",
+                          "value": true
+                        },
+                        {
+                          "@type": "LocationFeatureSpecification",
+                          "name": "Gymnasium",
+                          "value": true
+                        },
+                        {
+                          "@type": "LocationFeatureSpecification",
+                          "name": "24/7 Security",
+                          "value": true
+                        },
+                        {
+                          "@type": "LocationFeatureSpecification",
+                          "name": "Smart Home Features",
+                          "value": true
+                        }
+                      ],
+                      "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "29-30A Jinnah Avenue, Hill Crest, Bahria Town",
+                        "addressLocality": "Karachi",
+                        "addressRegion": "Sindh",
+                        "addressCountry": "PK"
+                      },
+                      "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 24.8607,
+                        "longitude": 67.0011
+                      }
+                    })
+                  }}
+                />
+                
+                {/* Additional Schema for Real Estate Listing */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "RealEstateListing",
+                      "name": "Hill Crest Residency",
+                      "description": "Premium residential complex offering 2, 3 & 4 bedroom luxury apartments with modern amenities",
+                      "url": "https://narkinsbuilders.com/hill-crest-residency",
+                      "image": "https://narkinsbuilders.com/images/hcr_new.webp",
+                      "datePosted": "2021-01-01",
+                      "validThrough": "2025-12-31",
+                      "price": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "PKR",
+                        "price": "Contact for pricing"
+                      },
+                      "numberOfRooms": "2-4",
+                      "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": "697-1996",
+                        "unitCode": "FTK"
+                      },
+                      "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "29-30A Jinnah Avenue, Hill Crest",
+                        "addressLocality": "Bahria Town, Karachi",
+                        "addressRegion": "Sindh",
+                        "addressCountry": "PK"
+                      }
+                    })
+                  }}
+                />
             </Head>
+            
             <Navigation />
             <Lightbox />
+            
             <div className="bg-white pt-[6rem]">
                 <div className="px-4 bg-neutral-50 relative md:xl:px-0 w-full h-auto max-w-7xl z-index-0 bg-transparent mx-auto my-8 rounded-xl overflow-hidden -md:lg:rounded-none">
                     <VideoPlayer src="/hillcrest.mp4" poster={'/images/hcr_video_poster.png'} />
                 </div>
+                
                 <div className="relative isolate overflow-hidden py-20 pt-5 sm:py-[28px]">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-2xl lg:mx-0">
-                            <h2 className="text-4xl font-bold tracking-tight text-black sm:text-7xl">Hill Crest Residency</h2>
+                            <h1 className="text-4xl font-bold tracking-tight text-black sm:text-7xl">Hill Crest Residency</h1>
                             <p className="mt-6 text-lg leading-8 text-gray-800">
-                                Our Magnificent and eminent master piece is located at 29-30A Jinnah Avenue,  Just 30 seconds away and nearly 1 km drive from the main gate. We ensure a luxurious and modern lifestyle with all your necessities as well as opulence being taken care of, once you book with us a place of your own in Hill Crest.
+                                Our Magnificent and eminent master piece is located at 29-30A Jinnah Avenue, Just 30 seconds away and nearly 1 km drive from the main gate. We ensure a luxurious and modern lifestyle with all your necessities as well as opulence being taken care of, once you book with us a place of your own in Hill Crest.
                                 <br /><br />
                                 We are currently providing a variety of 2 bed and 3 bed luxury apartments along with lounge and dining that features panoramic view of the beauty of Bahria town. It will surely let you experience the lifestyle you always dreamed for your family and upcoming generations!
                             </p>
                         </div>
                     </div>
                 </div>
+                
                 <section className="bg-black py-20">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                        {/* Heading and Subheading */}
                         <div className="text-center mb-12">
                             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                                 Explore Our Offerings
@@ -220,8 +336,8 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                                 Discover a range of luxurious apartments designed to meet your lifestyle needs. Each offering combines elegance, comfort, and modern amenities.
                             </p>
                         </div>
+                        
                         <Tabs defaultValue={categories[0]} className="w-full mt-10">
-                            {/* Tabs List */}
                             <TabsList className="flex space-x-1 gap-2 py-2 mb-5 border-b-neutral-900 rounded-xl bg-neutral-900/20">
                                 {categories.map((category) => (
                                     <TabsTrigger
@@ -234,7 +350,6 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                                 ))}
                             </TabsList>
 
-                            {/* Tabs Content */}
                             {cards.map((items, idx) => (
                                 <TabsContent key={idx} value={categories[idx]}>
                                     <motion.div
@@ -246,7 +361,6 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                                         {items.map((item, index) => (
                                             <motion.div
                                                 key={index}
-                                                // whileHover={{ scale: 1.05 }}
                                                 transition={{ duration: 0.3 }}
                                                 className="group"
                                             >
@@ -268,7 +382,7 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                                                         </div>
                                                     </CardHeader>
                                                     <CardContent className="p-4">
-                                                        <h1 className="text-xl font-semibold text-white">{item.title}</h1>
+                                                        <h3 className="text-xl font-semibold text-white">{item.title}</h3>
                                                         <p className="text-sm mt-2 text-neutral-300">
                                                             <strong>Size</strong>: {item.size}, <strong>Location</strong>: {item.location}
                                                         </p>
@@ -282,12 +396,13 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                         </Tabs>
                     </div>
                 </section>
+                
                 <section className="bg-white py-20">
                     <Amenities />
                 </section>
+                
                 <section className="bg-neutral-100 px-5 mx-auto py-20 lg:px-8">
                     <div className="mx-auto max-w-7xl">
-                        {/* Gallery Heading (Optional) */}
                         <div className="text-center mb-12">
                             <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                                 Gallery
@@ -297,7 +412,6 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                             </p>
                         </div>
 
-                        {/* Masonry Grid Gallery */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                             {galleryImages.map((src, index) => (
                                 <motion.div
@@ -309,7 +423,7 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                                 >
                                     <Image
                                         src={src}
-                                        alt={`Gallery Image ${index + 1}`}
+                                        alt={`Hill Crest Residency Gallery Image ${index + 1}`}
                                         width={500}
                                         height={300}
                                         className="w-full h-auto object-cover rounded-lg"
@@ -324,7 +438,6 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                             ))}
                         </div>
 
-                        {/* Map Section (Unchanged) */}
                         <div className="mt-16">
                             <Map map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.871134778674!2d67.3134228!3d25.0044944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb34b0d0e2f0313%3A0x82f9da3499b223b1!2sHill%20Crest%20Residency!5e0!3m2!1sen!2s!4v1714296481726!5m2!1sen!2s" />
                         </div>
@@ -334,9 +447,9 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                 <section className="bg-neutral-100 border-t px-5 lg:px-8 py-20">
                     <Testimonials testimonials={testimonials} />
                 </section>
+                
                 <section className="bg-white py-20 border-b border">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                        {/* Heading */}
                         <div className="text-center mb-12">
                             <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                                 What Social Media is Saying
@@ -346,7 +459,6 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                             </p>
                         </div>
 
-                        {/* Masonry Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 auto-rows-[minmax(200px, auto)]">
                             {youtubeVideos.map((video, index) => (
                                 <motion.div
@@ -355,7 +467,6 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                                     transition={{ duration: 0.3 }}
                                     className="group relative overflow-hidden min-h-[300px] shadow-lg hover:shadow-xl"
                                 >
-                                    {/* YouTube Thumbnail */}
                                     <a
                                         href={`https://youtube.com/watch?v=${video.id}`}
                                         target="_blank"
@@ -371,12 +482,11 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                                             loading="lazy"
                                         />
                                         <div className="absolute bottom-[4rem] left-4 flex items-center justify-center">
-                                            <Image alt={'youtube-logo'} src="/youtube.svg" width={50} height={150 / 2} style={{ height: 'auto' }} />
+                                            <Image alt={'youtube-logo'} src="/youtube.svg" width={50} height={25} style={{ height: 'auto' }} />
                                         </div>
                                     </a>
 
-                                    {/* Overlay with Title and Watch Now Button */}
-                                    <div className="absolute inset-0 bg-black bg-opacity-0 bg-linear-to-b from-transparent to-black group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                                         <a
                                             href={`https://youtube.com/watch?v=${video.id}`}
                                             target="_blank"
@@ -387,21 +497,24 @@ export default function HillCrestResidency({ posts }: { posts: Post[] }) {
                                         </a>
                                     </div>
 
-                                    {/* Video Title */}
-                                    <div className="absolute flex items-middle bottom-0 left-0 right-0 p-4 bg-black/50 backdrop-blur-sm">
+                                    <div className="absolute flex items-center bottom-0 left-0 right-0 p-4 bg-black/50 backdrop-blur-sm">
                                         <p className="text-white text-lg font-semibold">{video.title}</p>
-                                        <div className="ml-auto mt-1"><ArrowTopRightOnSquareIcon className="h-4 w-4 text-white" /></div>
+                                        <div className="ml-auto mt-1">
+                                            <ArrowTopRightOnSquareIcon className="h-4 w-4 text-white" />
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </section>
+                
                 <BlogsSection posts={posts} />
             </div>
+            
             <Footer />
-        </main >
-    )
+        </main>
+    );
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {

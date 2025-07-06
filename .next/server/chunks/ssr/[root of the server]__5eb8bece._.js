@@ -1645,7 +1645,15 @@ const Navigation = ({ transparent, fixed })=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                             className: "ml-4 flow-root lg:ml-6",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setLeadForm(true),
+                                                onClick: ()=>{
+                                                    // Track the Get Quote click
+                                                    console.log('🔵 Get Quote button clicked!');
+                                                    if ("TURBOPACK compile-time falsy", 0) {
+                                                        "TURBOPACK unreachable";
+                                                    }
+                                                    // Open the lead form
+                                                    setLeadForm(true);
+                                                },
                                                 className: "py-2 px-4 no-underline rounded-full bg-black text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2",
                                                 children: "Get Quote"
                                             }, void 0, false, {
@@ -1717,9 +1725,10 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 ;
 ;
+return <invalid> > {};
 function Blogs() {
-    const [posts, setPosts] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])([]);
-    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
+    const [posts, setPosts] = useState([]);
+    useEffect(()=>{
         // Update the URL to the correct endpoint, ensure it is pointing to your specific WordPress site.
         fetch('https://admin.narkinsbuilders.com/wp-json/wp/v2/posts').then((response)=>response.json()).then((data)=>{
             setPosts(data.map((post)=>({
@@ -1738,22 +1747,22 @@ function Blogs() {
                 })));
         }).catch((error)=>console.error('Error fetching posts:', error));
     }, []);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
+    return /*#__PURE__*/ _jsxDEV(_Fragment, {
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navigation$2f$navigation$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+            /*#__PURE__*/ _jsxDEV(Navigation, {}, void 0, false, {
                 fileName: "[project]/src/pages/blogs/index.tsx",
-                lineNumber: 34,
+                lineNumber: 53,
                 columnNumber: 5
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ _jsxDEV("div", {
                 className: "bg-white min-h-screen py-24 sm:py-32",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                children: /*#__PURE__*/ _jsxDEV("div", {
                     className: "mx-auto max-w-7xl px-6 lg:px-8",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                        /*#__PURE__*/ _jsxDEV("div", {
                             className: "mx-auto max-w-2xl lg:mx-0",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
+                                /*#__PURE__*/ _jsxDEV("h2", {
                                     className: "text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl",
                                     children: [
                                         `Narkin's Builders`,
@@ -1761,84 +1770,84 @@ function Blogs() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                    lineNumber: 38,
+                                    lineNumber: 57,
                                     columnNumber: 11
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                /*#__PURE__*/ _jsxDEV("p", {
                                     className: "mt-2 text-lg leading-8 text-gray-600",
                                     children: "Checkout what were publishing on our blog"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                    lineNumber: 39,
+                                    lineNumber: 58,
                                     columnNumber: 11
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/blogs/index.tsx",
-                            lineNumber: 37,
+                            lineNumber: 56,
                             columnNumber: 9
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                        /*#__PURE__*/ _jsxDEV("div", {
                             className: "mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 -border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3",
-                            children: posts.map((post)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("article", {
+                            children: posts.map((post)=>/*#__PURE__*/ _jsxDEV("article", {
                                     className: "shadow- bg-neutral-50 border p-4 rounded flex max-w-xl flex-col items-start justify-between",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                        /*#__PURE__*/ _jsxDEV("div", {
                                             className: "flex items-center gap-x-4 text-xs",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("time", {
+                                                /*#__PURE__*/ _jsxDEV("time", {
                                                     dateTime: post.datetime,
                                                     className: "text-gray-500",
                                                     children: post.date
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 47,
+                                                    lineNumber: 66,
                                                     columnNumber: 17
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                /*#__PURE__*/ _jsxDEV(Link, {
                                                     href: "#" // Placeholder: replace with actual category link or remove if not applicable
                                                     ,
                                                     className: "relative z-10 rounded-full bg-white px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100",
                                                     children: `Narkin's`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 51,
+                                                    lineNumber: 70,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                            lineNumber: 46,
+                                            lineNumber: 65,
                                             columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                        /*#__PURE__*/ _jsxDEV("div", {
                                             className: "group relative",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
+                                                /*#__PURE__*/ _jsxDEV("h3", {
                                                     className: "mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                    children: /*#__PURE__*/ _jsxDEV(Link, {
                                                         href: `${post.link}`,
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
+                                                            /*#__PURE__*/ _jsxDEV("span", {
                                                                 className: "absolute inset-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/blogs/index.tsx",
-                                                                lineNumber: 61,
+                                                                lineNumber: 80,
                                                                 columnNumber: 21
                                                             }, this),
                                                             post.title
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/pages/blogs/index.tsx",
-                                                        lineNumber: 60,
+                                                        lineNumber: 79,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 59,
+                                                    lineNumber: 78,
                                                     columnNumber: 17
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                /*#__PURE__*/ _jsxDEV("p", {
                                                     className: "mt-5 line-clamp-3 text-sm leading-6 text-gray-600",
                                                     suppressHydrationWarning: true,
                                                     dangerouslySetInnerHTML: {
@@ -1846,99 +1855,99 @@ function Blogs() {
                                                     }
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 65,
+                                                    lineNumber: 84,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                            lineNumber: 58,
+                                            lineNumber: 77,
                                             columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                        /*#__PURE__*/ _jsxDEV("div", {
                                             className: "hidden relative mt-8 flex items-center gap-x-4",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
+                                                /*#__PURE__*/ _jsxDEV("img", {
                                                     src: post.author.imageUrl,
                                                     alt: "",
                                                     className: "h-10 w-10 rounded-full bg-gray-50"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 68,
+                                                    lineNumber: 87,
                                                     columnNumber: 17
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                /*#__PURE__*/ _jsxDEV("div", {
                                                     className: "text-sm leading-6",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                        /*#__PURE__*/ _jsxDEV("p", {
                                                             className: "font-semibold text-gray-900",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                                                            children: /*#__PURE__*/ _jsxDEV("a", {
                                                                 href: "#",
                                                                 children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
+                                                                    /*#__PURE__*/ _jsxDEV("span", {
                                                                         className: "absolute inset-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/pages/blogs/index.tsx",
-                                                                        lineNumber: 72,
+                                                                        lineNumber: 91,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     post.author.name
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/pages/blogs/index.tsx",
-                                                                lineNumber: 71,
+                                                                lineNumber: 90,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                                            lineNumber: 70,
+                                                            lineNumber: 89,
                                                             columnNumber: 19
                                                         }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                        /*#__PURE__*/ _jsxDEV("p", {
                                                             className: "text-gray-600",
                                                             children: post.author.role
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                                            lineNumber: 76,
+                                                            lineNumber: 95,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                                    lineNumber: 69,
+                                                    lineNumber: 88,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/blogs/index.tsx",
-                                            lineNumber: 67,
+                                            lineNumber: 86,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, post.id, true, {
                                     fileName: "[project]/src/pages/blogs/index.tsx",
-                                    lineNumber: 45,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/pages/blogs/index.tsx",
-                            lineNumber: 43,
+                            lineNumber: 62,
                             columnNumber: 9
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/pages/blogs/index.tsx",
-                    lineNumber: 36,
+                    lineNumber: 55,
                     columnNumber: 7
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/blogs/index.tsx",
-                lineNumber: 35,
+                lineNumber: 54,
                 columnNumber: 5
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$footer$2f$footer$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+            /*#__PURE__*/ _jsxDEV(Footer, {}, void 0, false, {
                 fileName: "[project]/src/pages/blogs/index.tsx",
-                lineNumber: 84,
+                lineNumber: 103,
                 columnNumber: 5
             }, this)
         ]

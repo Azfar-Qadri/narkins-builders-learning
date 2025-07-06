@@ -1809,7 +1809,20 @@ const Navigation = ({ transparent, fixed })=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "ml-4 flow-root lg:ml-6",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setLeadForm(true),
+                                                onClick: ()=>{
+                                                    // Track the Get Quote click
+                                                    console.log('🔵 Get Quote button clicked!');
+                                                    if ("object" !== 'undefined' && window.gtag) {
+                                                        window.gtag('event', 'get_quote_click', {
+                                                            event_category: 'Lead Generation',
+                                                            event_label: 'navigation_button',
+                                                            event_source: 'main_navigation'
+                                                        });
+                                                        console.log('✅ Get Quote event sent to Google Analytics');
+                                                    }
+                                                    // Open the lead form
+                                                    setLeadForm(true);
+                                                },
                                                 className: "py-2 px-4 no-underline rounded-full bg-black text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2",
                                                 children: "Get Quote"
                                             }, void 0, false, {
@@ -1896,24 +1909,183 @@ function AboutUs() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
-                    children: [
-                        "About ",
-                        `Narkin\'s Builders`
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/pages/about.tsx",
-                    lineNumber: 11,
-                    columnNumber: 17
-                }, this)
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
+                        children: "About Narkin's Builders - 30+ Years of Construction Excellence in Karachi"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 13,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "description",
+                        content: "Learn about Narkin's Builders - 30+ years of construction excellence in Karachi. From Narkin's Textile Industries to luxury real estate development in Bahria Town."
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 14,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "keywords",
+                        content: "Narkin's Builders history, construction company Karachi, Bahria Town developers, 30 years experience, real estate Karachi"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 15,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "author",
+                        content: "Narkin's Builders & Developers"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 16,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "viewport",
+                        content: "width=device-width, initial-scale=1"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 17,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "canonical",
+                        href: "https://narkinsbuilders.com/about"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 20,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:type",
+                        content: "website"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 23,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:title",
+                        content: "About Narkin's Builders - 30+ Years of Excellence"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 24,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:description",
+                        content: "Learn about Narkin's Builders - 30+ years of construction excellence in Karachi. From textile industry roots to luxury real estate development."
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 25,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:url",
+                        content: "https://narkinsbuilders.com/about"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 26,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:image",
+                        content: "https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 27,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:site_name",
+                        content: "Narkin's Builders"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 28,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:card",
+                        content: "summary_large_image"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 31,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:title",
+                        content: "About Narkin's Builders - 30+ Years of Excellence"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 32,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:description",
+                        content: "Learn about Narkin's Builders - 30+ years of construction excellence in Karachi."
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 33,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:image",
+                        content: "https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 34,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
+                        type: "application/ld+json",
+                        dangerouslySetInnerHTML: {
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "AboutPage",
+                                "mainEntity": {
+                                    "@type": "Organization",
+                                    "name": "Narkin's Builders & Developers",
+                                    "url": "https://narkinsbuilders.com",
+                                    "logo": "https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp",
+                                    "foundingDate": "1991",
+                                    "description": "Premium residential construction company in Karachi with 30+ years of experience. From textile industry roots to luxury real estate development in Bahria Town.",
+                                    "address": {
+                                        "@type": "PostalAddress",
+                                        "addressLocality": "Karachi",
+                                        "addressRegion": "Sindh",
+                                        "addressCountry": "PK"
+                                    },
+                                    "founder": {
+                                        "@type": "Person",
+                                        "name": "Mr. Ashraf Nara",
+                                        "jobTitle": "CEO"
+                                    },
+                                    "numberOfEmployees": "50-100",
+                                    "areaServed": "Karachi",
+                                    "knowsAbout": [
+                                        "Real Estate Development",
+                                        "Luxury Apartments",
+                                        "Smart Home Technology",
+                                        "Construction Management"
+                                    ]
+                                }
+                            })
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/about.tsx",
+                        lineNumber: 37,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/pages/about.tsx",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navigation$2f$navigation$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/about.tsx",
-                lineNumber: 13,
+                lineNumber: 75,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1925,41 +2097,38 @@ function AboutUs() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "mx-auto max-w-2xl lg:mx-0",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                         className: "text-3xl font-bold mb-[4rem] tracking-tight text-gray-900 sm:text-7xl",
-                                        children: [
-                                            "About ",
-                                            `Narkin's Builders`
-                                        ]
-                                    }, void 0, true, {
+                                        children: "About Narkin's Builders"
+                                    }, void 0, false, {
                                         fileName: "[project]/src/pages/about.tsx",
-                                        lineNumber: 17,
+                                        lineNumber: 79,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "mt-2 text-lg leading-8 text-gray-600",
                                         children: [
-                                            "Welcome to Narkin's Builders, our excellence meets innovation in construction and development. With a rich legacy spanning over 30 years, we have established ourselves as a leading name in the real estate development industry in Karachi, Pakistan.",
+                                            "Welcome to Narkin's Builders, where excellence meets innovation in construction and development. With a rich legacy spanning over 30 years, we have established ourselves as a leading name in the real estate development industry in Karachi, Pakistan.",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/pages/about.tsx",
-                                                lineNumber: 20,
+                                                lineNumber: 84,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/pages/about.tsx",
-                                                lineNumber: 20,
+                                                lineNumber: 84,
                                                 columnNumber: 35
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/pages/about.tsx",
-                                        lineNumber: 18,
+                                        lineNumber: 82,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/pages/about.tsx",
-                                lineNumber: 16,
+                                lineNumber: 78,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1967,10 +2136,6 @@ function AboutUs() {
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "grid grid-cols-1 md:grid-cols-2 lg:max-xl:grid-cols-3 gap-4",
                                     children: [
-                                        // "/images/hill-crest-residency-launch-2.webp",
-                                        // "/images/hill-crest-residency-launch.webp",
-                                        // "/images/nbr-march.webp",
-                                        // "/images/nbr-residency-sept.webp",
                                         "/images/reliability.webp",
                                         "/images/smart-door-lock.webp",
                                         "/images/smart-wifi-switches.webp"
@@ -1979,10 +2144,11 @@ function AboutUs() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                     src: image,
+                                                    alt: `${Inovations[index]} - Narkin's Builders Innovation`,
                                                     className: "hover:brightness-75 transition duration-[0.5s] border cursor-pointer filter w-full h-auto bg-neutral-100 object-cover rounded-lg"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 35,
+                                                    lineNumber: 96,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1990,23 +2156,23 @@ function AboutUs() {
                                                     children: Inovations[index]
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 36,
+                                                    lineNumber: 101,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, image, true, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 34,
+                                            lineNumber: 95,
                                             columnNumber: 33
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 24,
+                                    lineNumber: 89,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/about.tsx",
-                                lineNumber: 23,
+                                lineNumber: 88,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2024,12 +2190,12 @@ function AboutUs() {
                                                 d: "M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/about.tsx",
-                                                lineNumber: 61,
+                                                lineNumber: 112,
                                                 columnNumber: 33
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 60,
+                                            lineNumber: 111,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
@@ -2038,12 +2204,12 @@ function AboutUs() {
                                                 children: "\"At Narkin's Builders, we prioritize commitment, transparency, and innovation. For over 30 years, these values have fueled our success, driving us to deliver cutting-edge construction projects and luxury living spaces that exceed expectations. Our transparent approach ensures our customers are informed and involved, while our innovative solutions push the boundaries of what's possible. Thank you for choosing Narkin's Builders as your trusted partner in building your dream home.\""
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/about.tsx",
-                                                lineNumber: 64,
+                                                lineNumber: 115,
                                                 columnNumber: 33
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 63,
+                                            lineNumber: 114,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("figcaption", {
@@ -2056,7 +2222,7 @@ function AboutUs() {
                                                         children: "Mr. Ashraf Nara"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/about.tsx",
-                                                        lineNumber: 70,
+                                                        lineNumber: 121,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("cite", {
@@ -2064,35 +2230,35 @@ function AboutUs() {
                                                         children: "CEO at Narkin's"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/about.tsx",
-                                                        lineNumber: 71,
+                                                        lineNumber: 122,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/pages/about.tsx",
-                                                lineNumber: 69,
+                                                lineNumber: 120,
                                                 columnNumber: 33
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 68,
+                                            lineNumber: 119,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 110,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/about.tsx",
-                                lineNumber: 58,
+                                lineNumber: 109,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/about.tsx",
-                        lineNumber: 15,
+                        lineNumber: 77,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2100,12 +2266,12 @@ function AboutUs() {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "mx-auto max-w-7xl gap-y-2 flex flex-col px-6 lg:px-8",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-3xl font-bold mb-[1rem] tracking-tight text-gray-900 sm:text-5xl",
                                     children: "Hill Crest Residency Journey"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 131,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2113,7 +2279,7 @@ function AboutUs() {
                                     children: "Hill Crest Residency is an example of our commitment in terms of timeline, quality and customer satisfaction. Hill Crest Residency has also pioneered smart apartments in Bahria Town Karachi. Over the years, we have successfully delivered 5 high-rise projects in the most prime areas of Karachi, each showcasing our dedication to craftsmanship and attention to detail."
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 134,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2121,10 +2287,11 @@ function AboutUs() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                             src: "/images/hill-crest-residency-launch.webp",
+                                            alt: "Hill Crest Residency Launch 2021",
                                             className: "hidden md:lg:block w-full h-auto bg-neutral-100 rounded-xl cursor-pointer"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 138,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2135,13 +2302,13 @@ function AboutUs() {
                                                     children: "2021"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 88,
+                                                    lineNumber: 144,
                                                     columnNumber: 61
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 87,
+                                            lineNumber: 143,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2152,21 +2319,22 @@ function AboutUs() {
                                                     children: "2025"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 91,
+                                                    lineNumber: 147,
                                                     columnNumber: 65
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 90,
+                                            lineNumber: 146,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                             src: "/images/hcr_new.webp",
+                                            alt: "Hill Crest Residency Completed 2025",
                                             className: "w-full hidden md:lg:block h-auto bg-neutral-100 rounded-xl cursor-pointer"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 149,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2174,44 +2342,11 @@ function AboutUs() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                     src: "/images/hill-crest-residency-launch.webp",
+                                                    alt: "Hill Crest Residency Launch 2021",
                                                     className: "w-full h-auto bg-neutral-100 rounded-xl cursor-pointer"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 95,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-lg my-2 font-medium text-gray-900 px-[1rem]",
-                                                    children: [
-                                                        "Hill Crest Residency Completion ",
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                            children: "2025"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/pages/about.tsx",
-                                                            lineNumber: 97,
-                                                            columnNumber: 69
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 96,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 94,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-col items-center md:lg:hidden",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                    src: "/images/hill-crest-residency-launch-2.webp",
-                                                    className: "w-full bg-neutral-100 h-auto rounded-xl cursor-pointer"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 101,
+                                                    lineNumber: 157,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2222,383 +2357,88 @@ function AboutUs() {
                                                             children: "2021"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/about.tsx",
-                                                            lineNumber: 103,
+                                                            lineNumber: 163,
                                                             columnNumber: 65
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 102,
+                                                    lineNumber: 162,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 100,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 85,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/pages/about.tsx",
-                            lineNumber: 78,
-                            columnNumber: 21
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/about.tsx",
-                        lineNumber: 77,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-neutral-100 border-b py-[5rem]",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mx-auto max-w-7xl gap-y-2 flex flex-col px-6 lg:px-8",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "text-3xl font-bold mb-[1rem] tracking-tight text-gray-900 sm:text-5xl",
-                                    children: [
-                                        "Narkin",
-                                        "'",
-                                        "s Boutique Residency Journey"
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 111,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "mt-2 text-lg mb-[5rem] leading-8 max-w-2xl text-gray-600",
-                                    children: "Narkin's Boutique Residency exemplifies our dedication to timely delivery, exceptional quality, and customer satisfaction. Just as Hill Crest Residency pioneered smart apartments in Bahria Town Karachi, Narkin's Boutique Residency continues this legacy of innovation and excellence. Over the years, we have successfully completed five high-rise projects in prime locations across Karachi, each reflecting our commitment to superior craftsmanship and meticulous attention to detail."
-                                }, void 0, false, {
-                                    fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 114,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 md:lg:grid-cols-2 gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: "/images/nbr-residency-sept.webp",
-                                            className: "hidden md:lg:block w-full h-auto bg-neutral-100 rounded-xl cursor-pointer"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 118,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-lg my-2 font-medium text-gray-900 py-[1rem] hidden md:lg:block",
-                                            children: [
-                                                "Narkin’s Boutique Residency ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                    children: "September 2023"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 120,
-                                                    columnNumber: 61
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 119,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-lg my-2 font-medium text-gray-900 py-[1rem] hidden md:lg:block",
-                                            children: [
-                                                "Narkin’s Boutique Residency ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                    children: "March 2024"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 123,
-                                                    columnNumber: 61
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 122,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: "/images/nbr-march.webp",
-                                            className: "w-full hidden md:lg:block h-auto bg-neutral-100 rounded-xl cursor-pointer"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 156,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex flex-col items-center md:lg:hidden",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                    src: "/images/nbr-residency-sept.webp",
-                                                    className: "w-full h-auto bg-neutral-100 rounded-xl cursor-pointer"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 127,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-lg my-2 font-medium text-gray-900 px-[1rem]",
-                                                    children: [
-                                                        "Narkin’s Boutique Residency ",
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                            children: "September 2023"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/pages/about.tsx",
-                                                            lineNumber: 129,
-                                                            columnNumber: 65
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 128,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 126,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-col items-center md:lg:hidden",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                    src: "/images/nbr-march.webp",
+                                                    src: "/images/hcr_new.webp",
+                                                    alt: "Hill Crest Residency Completed 2025",
                                                     className: "w-full bg-neutral-100 h-auto rounded-xl cursor-pointer"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 167,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-lg my-2 font-medium text-gray-900 px-[1rem]",
                                                     children: [
-                                                        "Narkin’s Boutique Residency ",
+                                                        "Hill Crest Residency Completion ",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                            children: "March 2024"
+                                                            children: "2025"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/about.tsx",
-                                                            lineNumber: 135,
-                                                            columnNumber: 65
+                                                            lineNumber: 173,
+                                                            columnNumber: 69
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/about.tsx",
-                                                    lineNumber: 134,
+                                                    lineNumber: 172,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 132,
+                                            lineNumber: 166,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 117,
+                                    lineNumber: 137,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/about.tsx",
-                            lineNumber: 110,
+                            lineNumber: 130,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/pages/about.tsx",
-                        lineNumber: 109,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                        className: "bg-neutral-100 border-t py-[5rem]",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mx-auto max-w-7xl gap-y-2 flex flex-col px-6 lg:px-8",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mx-auto max-w-2xl lg:mx-0",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                            className: "text-3xl font-bold mb-[1rem] tracking-tight text-gray-900 sm:text-5xl",
-                                            children: "A story of reliability"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 144,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "mt-2 text-lg leading-8 text-gray-600",
-                                            children: "Hill Crest Residency is an example of our commitment in terms of timeline, quality and customer satisfaction. Hill Crest Residency has also pioneered smart apartments in Bahria Town Karachi. Over the years, we have successfully delivered 5 high-rise projects in the most prime areas of Karachi, each showcasing our dedication to craftsmanship and attention to detail."
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 145,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 143,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "my-[5rem] relative max-w-4xl mx-auto",
-                                    style: {
-                                        width: '100%',
-                                        paddingBottom: '40.25%'
-                                    },
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
-                                        src: "https://www.facebook.com/plugins/video.php?height=1080&href=https%3A%2F%2Fwww.facebook.com%2Fnarkinsbuilders%2Fvideos%2F881472746899551%2F&show_text=false&width=1920&t=0",
-                                        className: "absolute top-0 left-0 w-full h-full border rounded-xl overflow-hidden",
-                                        style: {
-                                            width: '100%',
-                                            height: '100%',
-                                            position: 'absolute',
-                                            top: '0',
-                                            left: '0'
-                                        },
-                                        scrolling: "no",
-                                        frameborder: "0",
-                                        allowfullscreen: "true",
-                                        allow: "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share",
-                                        allowFullScreen: "true"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/pages/about.tsx",
-                                        lineNumber: 150,
-                                        columnNumber: 29
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 149,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/pages/about.tsx",
-                            lineNumber: 142,
-                            columnNumber: 21
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/about.tsx",
-                        lineNumber: 141,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                        className: "bg-white py-[5rem]",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mx-auto max-w-7xl gap-y-2 flex flex-col px-6 lg:px-8",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mx-auto max-w-2xl lg:mx-0",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                            className: "text-3xl font-bold mb-[1rem] tracking-tight text-gray-900 sm:text-5xl",
-                                            children: "Narkin's Textile Industries"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 167,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mx-auto=max-w-2xl=lg:mx-0",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "mt-2 text-lg leading-8 text-gray-600",
-                                                children: "Narkin's is also a prominent player in the textile industry. As one of the largest manufacturers of garments in Pakistan, we have retail outlets spread across Karachi. Our manufacturing factory, Narkin's Textile Industries, located in the S.I.T.E area of Karachi, is a testament to our commitment to excellence and innovation across industries."
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/pages/about.tsx",
-                                                lineNumber: 169,
-                                                columnNumber: 33
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 168,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 166,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 md:lg:grid-cols-2 py-[5rem] gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: "/images/eastern-wear.webp",
-                                            className: "w-full h-full object-cover rounded-xl"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 174,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: "/images/narkins-textile-industries.webp",
-                                            className: "w-full h-full object-cover rounded-xl"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 175,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 173,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mx-auto max-w-2xl lg:mx-0",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mx-auto=max-w-2xl=lg:mx-0",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "mt-4 text-lg leading-8 text-gray-600",
-                                            children: "Narkin's Builders continues to push the boundaries of construction and development in Karachi. We invite you to experience the Narkin's difference—where quality, reliability, and innovation converge to create exceptional living spaces."
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/about.tsx",
-                                            lineNumber: 179,
-                                            columnNumber: 33
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/pages/about.tsx",
-                                        lineNumber: 178,
-                                        columnNumber: 29
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/pages/about.tsx",
-                                    lineNumber: 177,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/pages/about.tsx",
-                            lineNumber: 165,
-                            columnNumber: 21
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/about.tsx",
-                        lineNumber: 164,
+                        lineNumber: 129,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$footer$2f$footer$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/src/pages/about.tsx",
-                        lineNumber: 184,
+                        lineNumber: 181,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/about.tsx",
-                lineNumber: 14,
+                lineNumber: 76,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/about.tsx",
-        lineNumber: 9,
+        lineNumber: 10,
         columnNumber: 9
     }, this);
 }

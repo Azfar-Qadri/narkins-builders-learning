@@ -1,5 +1,18 @@
 {
   "pages": {
+    "/": [
+      "static/chunks/src_components_fb9a72f5._.js",
+      "static/chunks/[root of the server]__2ffdbe43._.js",
+      "static/chunks/node_modules_next_96f59cd6._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_@headlessui_react_dist_34f55537._.js",
+      "static/chunks/node_modules_framer-motion_dist_es_3710b6f4._.js",
+      "static/chunks/node_modules_fc7ea02a._.js",
+      "static/chunks/src_pages_index_5771e187._.js",
+      "static/chunks/src_pages_index_0a4fa1db._.js"
+    ],
     "/_app": [
       "static/chunks/src_components_2b6f3bb6._.js",
       "static/chunks/node_modules_next_780f2fe3._.js",
@@ -22,9 +35,43 @@
       "static/chunks/src_pages__error_5771e187._.js",
       "static/chunks/src_pages__error_07f7961f._.js"
     ],
+    "/about": [
+      "static/chunks/[root of the server]__ffb381fe._.js",
+      "static/chunks/node_modules_next_fa23535d._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_@headlessui_react_dist_34f55537._.js",
+      "static/chunks/node_modules_4e0318eb._.js",
+      "static/chunks/src_pages_about_5771e187._.js",
+      "static/chunks/src_pages_about_bfb99b31._.js"
+    ],
+    "/apartments-for-sale-bahria-town-karachi": [
+      "static/chunks/[root of the server]__b3cb411f._.js",
+      "static/chunks/node_modules_next_48c1e15e._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_@headlessui_react_dist_34f55537._.js",
+      "static/chunks/node_modules_framer-motion_dist_es_3710b6f4._.js",
+      "static/chunks/node_modules_c7b7fc91._.js",
+      "static/chunks/src_pages_apartments-for-sale-bahria-town-karachi_5771e187._.js",
+      "static/chunks/src_pages_apartments-for-sale-bahria-town-karachi_ff898020._.js"
+    ],
+    "/completed-projects": [
+      "static/chunks/[root of the server]__e519fd6b._.js",
+      "static/chunks/node_modules_next_fa23535d._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_@headlessui_react_dist_34f55537._.js",
+      "static/chunks/node_modules_21774dd7._.js",
+      "static/chunks/src_pages_completed-projects_index_tsx_5771e187._.js",
+      "static/chunks/src_pages_completed-projects_index_tsx_01cd0f46._.js"
+    ],
     "/hill-crest-residency": [
       "static/chunks/[root of the server]__260016c7._.js",
-      "static/chunks/node_modules_next_c3fda8c7._.js",
+      "static/chunks/node_modules_next_48c1e15e._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
@@ -32,7 +79,31 @@
       "static/chunks/node_modules_framer-motion_dist_es_3710b6f4._.js",
       "static/chunks/node_modules_48d54270._.js",
       "static/chunks/src_pages_hill-crest-residency_index_tsx_5771e187._.js",
-      "static/chunks/src_pages_hill-crest-residency_index_tsx_5157b358._.js"
+      "static/chunks/src_pages_hill-crest-residency_index_tsx_5c416084._.js"
+    ],
+    "/luxury-apartments-bahria-town": [
+      "static/chunks/[root of the server]__7e2ad350._.js",
+      "static/chunks/node_modules_next_48c1e15e._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_@headlessui_react_dist_34f55537._.js",
+      "static/chunks/node_modules_framer-motion_dist_es_3710b6f4._.js",
+      "static/chunks/node_modules_d10b56e4._.js",
+      "static/chunks/src_pages_luxury-apartments-bahria-town_5771e187._.js",
+      "static/chunks/src_pages_luxury-apartments-bahria-town_3c8b6ed6._.js"
+    ],
+    "/narkins-boutique-residency": [
+      "static/chunks/[root of the server]__b1201f3b._.js",
+      "static/chunks/node_modules_next_48c1e15e._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_@headlessui_react_dist_34f55537._.js",
+      "static/chunks/node_modules_framer-motion_dist_es_3710b6f4._.js",
+      "static/chunks/node_modules_bf2800e3._.js",
+      "static/chunks/src_pages_narkins-boutique-residency_index_tsx_5771e187._.js",
+      "static/chunks/src_pages_narkins-boutique-residency_index_tsx_2bb9a3cd._.js"
     ]
   },
   "devFiles": [],

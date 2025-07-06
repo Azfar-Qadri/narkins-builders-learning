@@ -2,6 +2,27 @@ import Footer from '@/components/footer/footer';
 import Navigation from '@/components/navigation/navigation';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
+
+return (
+    <>
+        <Head>
+            <title>{response?.title?.rendered ? `${response.title.rendered} | Narkin's Builders Blog` : 'Real Estate Blog | Narkin\'s Builders'}</title>
+            <meta name="description" content={response?.excerpt?.rendered?.replace(/<[^>]*>/g, '').slice(0, 160) || 'Latest insights on real estate, construction, and property investment in Karachi from Narkin\'s Builders.'} />
+            <meta name="keywords" content="Karachi real estate blog, property investment, Bahria Town news, construction insights, luxury apartments" />
+            
+            {/* Open Graph */}
+            <meta property="og:title" content={response?.title?.rendered || 'Narkin\'s Builders Blog'} />
+            <meta property="og:description" content={response?.excerpt?.rendered?.replace(/<[^>]*>/g, '').slice(0, 160) || 'Latest real estate insights from Narkin\'s Builders'} />
+            <meta property="og:url" content={`https://narkinsbuilders.com/blog/${response?.slug}`} />
+            <meta property="og:image" content="https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp" />
+            <meta property="og:type" content="article" />
+            
+            {/* Canonical URL */}
+            <link rel="canonical" href={`https://narkinsbuilders.com/blog/${response?.slug}`} />
+        </Head>
+        <Navigation />
+        {/* rest of your code stays the same */}
 
 export default function Blog() {
     const router = useRouter();

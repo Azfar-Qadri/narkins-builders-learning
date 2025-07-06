@@ -6,7 +6,7 @@
   "path": "static/chunks/src_pages_hill-crest-residency_index_tsx_5771e187._.js",
   "chunks": [
     "static/chunks/[root of the server]__260016c7._.js",
-    "static/chunks/node_modules_next_c3fda8c7._.js",
+    "static/chunks/node_modules_next_48c1e15e._.js",
     "static/chunks/node_modules_react_1cad9b0b._.js",
     "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
     "static/chunks/node_modules_react-dom_f14d0471._.js",

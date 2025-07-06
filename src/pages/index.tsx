@@ -10,9 +10,9 @@ import Image from "next/image";
 
 import { useGlobalLeadFormState, useLightboxStore } from '@/zustand';
 import { GetServerSideProps } from 'next';
-import { Button } from '@/components/ui/button'; // shadcn/ui button
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // shadcn/ui card
-import { motion } from 'framer-motion'; // For animations
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { motion } from 'framer-motion';
 
 const Lightbox = dynamic(() => import('@/components/lightbox/lightbox'), { ssr: false });
 const Carousel = dynamic(() => import('@/components/carousel-op/carousel-op'), {
@@ -33,27 +33,28 @@ interface Post {
     imageUrl: string;
   };
 }
+
 const testimonials = [
   {
     name: "Saad Arshad",
     stars: [true, true, true, true, "half"],
     testimonial:
-      "Highly committed to delivering in timelines, I wholeheartedly recommend considering investment in projects by Narkin’s Builders.",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg", // Placeholder avatar
+      "Highly committed to delivering in timelines, I wholeheartedly recommend considering investment in projects by Narkin's Builders.",
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     name: "Arsalan",
     stars: [true, true, true, true, true],
     testimonial:
       "Smooth booking experience, very transparent throughout the process.",
-    avatar: "https://randomuser.me/api/portraits/men/2.jpg", // Placeholder avatar
+    avatar: "https://randomuser.me/api/portraits/men/2.jpg",
   },
   {
     name: "Umair Iqrar",
     stars: [true, true, true, true, false],
     testimonial:
-      "I decided to invest during the initial launch phase, and after just two years, I’ve seen substantial returns. It’s been a fantastic investment opportunity!",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg", // Placeholder avatar
+      "I decided to invest during the initial launch phase, and after just two years, I've seen substantial returns. It's been a fantastic investment opportunity!",
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
 ];
 
@@ -69,14 +70,129 @@ export default function Index({ posts }: { posts: Post[] }) {
       video.play().catch((error) => console.error('Video play failed', error));
     }
   }, []);
+  
   const openLightbox = useLightboxStore(state => state.openLightbox);
+  
   return (
     <>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Narkin&apos;s Builders - SEO Learning Version</title>
+        
+        {/* Mobile Optimization */}
+<meta name="format-detection" content="telephone=yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="theme-color" content="#000000" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://narkinsbuilders.com/" />
+        
+        {/* Primary SEO Meta Tags */}
+        <title>Narkin's Builders - Premium Luxury Apartments in Bahria Town Karachi | 30+ Years Experience</title>
+        <meta name="description" content="Discover luxury apartments in Bahria Town Karachi by Narkin's Builders. 30+ years of construction excellence. Premium 2, 3 & 4 bedroom apartments with modern amenities, smart home features, and flexible payment plans." />
+        <meta name="keywords" content="apartments for sale bahria town karachi, luxury apartments bahria town, 2 bedroom apartments bahria town, 3 bedroom apartments bahria town, property investment bahria town" />
+        <meta name="author" content="Narkin's Builders & Developers" />
+        
+        {/* Open Graph / Social Media Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://narkinsbuilders.com/" />
+        <meta property="og:title" content="Narkin's Builders - Premium Luxury Apartments in Bahria Town Karachi" />
+        <meta property="og:description" content="Discover luxury apartments in Bahria Town Karachi by Narkin's Builders. 30+ years of construction excellence." />
+        <meta property="og:image" content="https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp" />
+        <meta property="og:site_name" content="Narkin's Builders" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://narkinsbuilders.com/" />
+        <meta property="twitter:title" content="Narkin's Builders - Premium Luxury Apartments in Bahria Town Karachi" />
+        <meta property="twitter:description" content="Discover luxury apartments in Bahria Town Karachi by Narkin's Builders. 30+ years of construction excellence." />
+        <meta property="twitter:image" content="https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp" />
+        
+        {/* Organization Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Narkin's Builders & Developers",
+              "url": "https://narkinsbuilders.com",
+              "logo": "https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp",
+              "description": "Premium residential construction company in Karachi with 30+ years of experience. Specializing in luxury apartments and modern living spaces in Bahria Town.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Bahria Town",
+                "addressLocality": "Karachi",
+                "addressRegion": "Sindh",
+                "postalCode": "75340",
+                "addressCountry": "PK"
+              },
+              "telephone": "+92-XXX-XXXXXXX",
+              "areaServed": "Karachi",
+              "foundingDate": "1991",
+              "numberOfEmployees": "50-100",
+              "sameAs": [
+                "https://www.facebook.com/narkinsbuilders",
+                "https://www.instagram.com/narkinsbuilders"
+              ],
+              "makesOffer": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Product",
+                    "name": "Luxury Apartments",
+                    "description": "Premium 2, 3 & 4 bedroom apartments in Bahria Town Karachi"
+                  }
+                }
+              ]
+            })
+          }}
+        />
+        
+        {/* Local Business Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Narkin's Builders & Developers",
+              "image": "https://narkinsbuilders.com/images/narkins-builders-logo-30-years-experience.webp",
+              "url": "https://narkinsbuilders.com",
+              "telephone": "+92-XXX-XXXXXXX",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Bahria Town",
+                "addressLocality": "Karachi",
+                "addressRegion": "Sindh",
+                "postalCode": "75340",
+                "addressCountry": "PK"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 24.8607,
+                "longitude": 67.0011
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday", 
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              "priceRange": "$$$$"
+            })
+          }}
+        />
       </Head>
+      
       <Navigation fixed={true} />
       <div>
         <header className="relative flex items-center justify-center min-h-[70vh] overflow-hidden">
@@ -105,6 +221,7 @@ export default function Index({ posts }: { posts: Post[] }) {
             </motion.div>
           </div>
           <video
+            ref={videoRef}
             preload="yes"
             poster="/videoframe_0.webp"
             className="max-h-screen absolute w-auto min-w-full min-h-full object-cover brightness-50"
@@ -219,7 +336,7 @@ export default function Index({ posts }: { posts: Post[] }) {
               </h2>
               <p className="mt-4 text-lg text-neutral-300">
               Conveniently located just a minute drive from the main entrance of Bahria Town Karachi, Hill Crest Residency offers an exceptional living experience with a selection of spacious and thoughtfully designed 2, 3, and 4-bedroom luxury apartments. Nestled in a prime and rapidly developing area, 
-              the complex combines comfort, elegance, and modern amenities to create a lifestyle that’s both refined and relaxing. 
+              the complex combines comfort, elegance, and modern amenities to create a lifestyle that's both refined and relaxing. 
                Schedule your free tour today and discover what elevated living truly feels like.
               </p>
               <Button asChild className="bg-primary text-white hover:bg-primary/90">
@@ -230,10 +347,10 @@ export default function Index({ posts }: { posts: Post[] }) {
             </motion.div>
 
             {/* Image for Desktop */}
-            <div className="hidden-lg:block">
+            <div className="hidden lg:block">
               <Image
                 src="/images/hcr_new.webp"
-                alt="Hill Crest Residency"
+                alt="Hill Crest Residency luxury apartments in Bahria Town Karachi"
                 width={800}
                 height={600}
                 className="rounded-lg"
@@ -255,7 +372,7 @@ export default function Index({ posts }: { posts: Post[] }) {
                     >
                       <Image
                         src={src}
-                        alt={`Gallery Image ${index + 1}`}
+                        alt={`Hill Crest Residency Gallery Image ${index + 1}`}
                         width={500}
                         height={300}
                         className="w-full h-auto object-cover rounded-lg"
@@ -277,6 +394,7 @@ export default function Index({ posts }: { posts: Post[] }) {
       <section className="bg-neutral-50 py-16">
         <CompletedProjects />
       </section>
+      
       {/* Trusted Partners Section */}
       <section className="bg-neutral-50 border-t py-16">
         <TrustedPartners />
@@ -286,6 +404,7 @@ export default function Index({ posts }: { posts: Post[] }) {
       <section className="bg-white border-t px-5 lg:px-8 py-20">
         <Testimonials testimonials={testimonials} />
       </section>
+      
       <section className='bg-white border-b px-4 lg:px-8 py-20 w-full'>
         <div className="ml-auto">
           <figure className="max-w-screen-md ml-auto text-right">
@@ -315,7 +434,7 @@ export default function Index({ posts }: { posts: Post[] }) {
       <Lightbox />
     </>
   );
-};
+}
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
@@ -400,7 +519,7 @@ export function CompletedProjects() {
             {/* Image */}
             <Image
               src={project.image}
-              alt={project.title}
+              alt={`${project.title} - Completed project by Narkin's Builders`}
               width={600}
               height={400}
               className="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105"
@@ -421,6 +540,7 @@ export function CompletedProjects() {
     </div>
   );
 }
+
 export function TrustedPartners() {
   const partners = [
     "https://gromotions.com/narkin/wp-content/uploads/2024/01/Trusted-Partners-02-320x202.png",
@@ -462,7 +582,7 @@ export function TrustedPartners() {
           >
             <Image
               src={src}
-              alt={`Trusted Partner ${index + 1}`}
+              alt={`Trusted Partner ${index + 1} - Narkin's Builders`}
               width={160}
               height={100}
               className="w-full border h-auto rounded-lg object-contain grayscale hover:grayscale-0 transition-all duration-300"
