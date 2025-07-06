@@ -76,6 +76,7 @@ export default function Index({ posts }: { posts: Post[] }) {
   return (
     <>
       <Head>
+        <meta name="google-site-verification" content="SY2-UJ6CktAAJnM7sSiieGZEPCNyXtW2nLwoEVGIBHw" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
